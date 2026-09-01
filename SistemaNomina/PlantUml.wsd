@@ -1,0 +1,47 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Empleado {
+  # nombre : String
+  # cedula : String
+  # sueldoBase : double
+  # id : int
+  {static} # totalEmpleados : int
+  {static} # proximoId : int
+  
+  + Empleado(nombre: String, cedula: String, sueldoBase: double)
+  {abstract} + calcularSueldo() : double
+  {abstract} + obtenerDetalles() : String
+  {static} + obtenerTotalEmpleados() : int
+  {static} + mostrarEstadisticas(totalNomina: double) : void
+}
+
+class Gerente {
+  + Gerente(nombre: String, cedula: String, sueldoBase: double)
+  + calcularSueldo() : double
+  + obtenerDetalles() : String
+}
+
+class Supervisor {
+  + Supervisor(nombre: String, cedula: String, sueldoBase: double)
+  + calcularSueldo() : double
+  + obtenerDetalles() : String7
+}
+
+class Obrero {
+  + Obrero(nombre: String, cedula: String, sueldoBase: double)
+  + calcularSueldo() : double
+  + obtenerDetalles() : String
+}
+
+class NominaEmpresa {
+  + main(args: String[]) : void
+}
+
+Empleado <|-- Gerente
+Empleado <|-- Supervisor
+Empleado <|-- Obrero
+
+NominaEmpresa --> Empleado : " gestiona >"
+
+@enduml

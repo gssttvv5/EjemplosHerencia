@@ -1,0 +1,53 @@
+@startuml
+package Abstraccion {
+    abstract class Animal {
+        - String nombre
+        - boolean esHerbivoro
+        + Animal(String nombre, boolean esHerbivoro)
+        {abstract} + void hacerSonido()
+        + void mostrarInfo()
+    }
+
+    class Aguila {
+        + Aguila()
+        + void hacerSonido()
+    }
+
+    class Elefante {
+        + Elefante()
+        + void hacerSonido()
+    }
+
+    class Jirafa {
+        + Jirafa()
+        + void hacerSonido()
+    }
+
+    class Leon {
+        + Leon()
+        + void hacerSonido()
+    }
+
+    class Lobo {
+        + Lobo()
+        + void hacerSonido()
+    }
+
+    class Vaca {
+        + Vaca()
+        + void hacerSonido()
+    }
+
+    class prueba {
+        + {static} void main(String[] args)
+    }
+
+    Animal <|-- Aguila
+    Animal <|-- Elefante
+    Animal <|-- Jirafa
+    Animal <|-- Leon
+    Animal <|-- Lobo
+    Animal <|-- Vaca
+    prueba ..> Animal : usa
+}
+@enduml
