@@ -1,0 +1,9 @@
+@startuml
+class Usuario {
+    -String nombre
+    -{static} int total = 0
+    +Usuario(String nombre)
+    +{static} int getTotal()
+    +{static} void main(String[] args)
+}
+@enduml
