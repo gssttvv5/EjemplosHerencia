@@ -1,0 +1,22 @@
+@startuml
+abstract class Figura {
+    {abstract} ~double area()
+    ~void mostrarNombre()
+}
+
+class Rectangulo {
+    -double base
+    -double altura
+    +Rectangulo(double base, double altura)
+    ~double area()
+}
+
+class Circulo {
+    -double radio
+    +Circulo(double radio)
+    ~double area()
+}
+
+Figura <|-- Rectangulo
+Figura <|-- Circulo
+@enduml
